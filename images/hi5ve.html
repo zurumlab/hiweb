@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hi5ve</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      color: #01a0fc;
+    }
+    
+    .search-input {
+      width: 70px;
+      padding: 5px;
+      border: 0.5px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .toolbar i {
+      font-size: 13px;
+      margin-right: 20px;
+    }
+
+    .toolbar h1 {
+      font-size: 14px; /* Change the font size for toolbar links */
+      margin-right: 10px;
+     color: #01a0fc;
+    }
+
+    
+    .toolbar button {
+      padding: 5px 10px;
+      border: 0.5px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .tweet {
+      border: 0px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .tweet .username {
+      font-weight: bold;
+    }
+    
+    .tweet .timestamp {
+      color: #8fc6dc;
+      font-size: 12px;
+    }
+    
+    .tweet .message {
+      margin-top: 5px;
+    }
+    
+    .tweet .actions {
+      margin-top: 10px;
+      color: #999;
+      font-size: 12px;
+    }
+    
+    .tweet .actions a {
+      text-decoration: none;
+      margin-right: 30px;
+      color: #8fc6dc;
+    }
+
+    .profile-image img {
+	    display: flex;
+	    width:40px;
+	    height: 40px;
+	    margin-right: 8px;
+	    border-radius: 50%;
+	    float: left;
+
+    }
+
+    .post-image img {
+            width: 100%;
+            height: 80%;
+	    margin-top: 8px;
+            border-radius: 4%;
+    }
+
+    .tweet .handle {
+      text-decoration: none;
+      font-weight: bold;
+      padding-top: 8px;
+    }
+
+
+    .tweet .option-menu {
+      font-weight: bold;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="toolbar">
+      <i class="fas fa-bars"></i> <!-- Menu icon -->
+      <h1>Home</h1>
+      <div>
+	<i class="fas fa-user-friends"></i> <!-- Friends request icon -->
+        <i class="fas fa-bell"></i> <!-- Notification icon -->
+        <i class="fas fa-envelope"></i> <!-- Message icon -->
+        <input type="text" class="search-input" placeholder="Posts">
+        <button>Search</button>
+      </div>
+    </div>
+
+
+    
+      <div class="tweet">
+         <div class="profile-image">
+            <img src="girl1.jpeg">
+	    <div class="handle">@JaneSmith</div>
+         </div>
+
+	 <div class="post-image">
+            <img src="girl3.jpeg">
+         </div>
+
+	  <div class="username">Jane Smith</div>
+	  <div class="timestamp">1 hours ago</div>
+	  <div class="message">My high school days pictures. 
+		  There was so much fun then. Nothing last forever, let's
+		  enjoy every moment in life. Do you still remember 
+		  your high school days? Cheers!</div>
+
+	<div class="actions">
+
+          <a href="#"><i class="fas fa-reply"></i></a>
+          <a href="#"><i class="fas fa-comment"></i></a>
+          <a href="#"><i class="fas fa-thumbs-up"></i></a>
+          <a href="#"><i class="fas fa-share"></i></a>
+
+          </div>
+
+       </div>
+
+
+
+	<div class="tweet">
+         <div class="profile-image">
+            <img src="girl2.jpeg">
+            <div class="handle">@bob2good</div>
+         </div>
+
+         <div class="post-image">
+            <img src="girl4.jpeg">
+         </div>
+
+          <div class="username">Bobby Jay</div>
+          <div class="timestamp">1 day ago</div>
+	  <div class="message">Just finished reading a great book!</div>
+        	
+	  <div class="actions">
+	  <a href="#"><i class="fas fa-reply"></i></a>
+	  <a href="#"><i class="fas fa-comment"></i></a>
+	  <a href="#"><i class="fas fa-thumbs-up"></i></a>
+	  <a href="#"><i class="fas fa-share"></i></a>
+	  </div>
+
+	</div>
+
+
+    <!-- Add more tweets here -->
+    
+  </div>
+</body>
+</html>
+
