@@ -1,0 +1,17 @@
+
+.site-background {
+  background-image: url('https://res.cloudinary.com/dwuyhjoib/image/upload/v1689794441/IMG_20230719_201845_n6i1fx.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  height: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 4px;
+  /* Set the desired height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+

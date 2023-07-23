@@ -1,0 +1,65 @@
+.near-service button {
+  border: 0px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+
+#image-list-container {
+  overflow-x: scroll;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#image-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+#image-list li {
+  flex: 0 0 60%;
+  margin-right: 12px;
+  background-color: #005483;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+#image-list li img {
+  width: 100px;
+  height: 100px;
+  padding: 3px;
+  float: left;
+  border-radius: 8px 8px 0 0;
+}
+
+#image-list li .name {
+  font-weight: bold;
+  margin-top: 16px;
+  color: white;
+  font-size: 8px;
+  text-align: center;
+}
+
+#image-list li .skills {
+  text-align: center;
+  margin-top: 12px;
+  color: white;
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+#image-list li .phone {
+  text-align: center;
+  color: white;
+  margin-top: 12px;
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+#image-list-container::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}

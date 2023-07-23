@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic List of Facebook-like Posts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .post {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #fff;
+      padding: 10px;
+      margin: 10px auto;
+      max-width: 500px;
+    }
+
+    .post img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .post-content {
+      margin-top: 10px;
+    }
+
+    .post-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .post-desc {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .post-author {
+      font-size: 14px;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .poster-image {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .post-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .post-action {
+      display: flex;
+      align-items: center;
+    }
+
+    .post-action img {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+
+    .like-button img {
+      filter: invert(50%);
+    }
+
+    .share-button img {
+      filter: invert(60%) sepia(50%) saturate(10) hue-rotate(180deg);
+    }
+
+    .comment-button img {
+      filter: invert(30%) sepia(50%) saturate(10) hue-rotate(90deg);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>List of Facebook-like Posts</h2>
+
+  <div id="dynamic-list">
+    <!-- Posts will be added here dynamically -->
+  </div>
+
+  <script>
+    // List of content for the posts, including title, description, author, image URLs, poster image URLs, and actions
+    const contentList = [
+      {
+        title: "Cute Cat",
+        desc: "This is a cute cat!",
+        author: "John Doe",
+        imageUrl: "https://cdn2.thecatapi.com/images/3d0.jpg",
+        posterImgUrl: "https://cdn2.thecatapi.com/images/avq.jpg",
+        likeCount: 100,
+        shareCount: 20,
+        commentCount: 50
+      },
+      {
+        title: "Adorable Kitten",
+        desc: "This kitten is so adorable!",
+        author: "Jane Smith",
+        imageUrl: "https://cdn2.thecatapi.com/images/b3i.jpg",
+        posterImgUrl: "https://cdn2.thecatapi.com/images/bcq.jpg",
+        likeCount: 150,
+        shareCount: 30,
+        commentCount: 70
+      },
+      {
+        title: "Playful Cat",
+        desc: "This cat loves to play!",
+        author: "Bob Johnson",
+        imageUrl: "https://cdn2.thecatapi.com/images/6mp.jpg",
+        posterImgUrl: "https://cdn2.thecatapi.com/images/ba3.jpg",
+        likeCount: 200,
+        shareCount: 40,
+        commentCount: 100
+      },
+      // Add more posts as needed
+    ];
+
+    function createPostList() {
+      const dynamicList = document.getElementById("dynamic-list");
+
+      contentList.forEach((content) => {
+        // Create a new div element for the post
+        const postDiv = document.createElement("div");
+        postDiv.classList.add("post");
+
+        // Create an image element for the post image
+        const imgElement = document.createElement("img");
+        imgElement.src = content.imageUrl;
+        imgElement.alt = content.title;
+
+        // Create a div to hold the post content
+        const postContentDiv = document.createElement("div");
+        postContentDiv.classList.add("post-content");
+
+        // Create a div for the poster's image
+        const posterImgDiv = document.createElement("div");
+        const posterImgElement = document.createElement("img");
+        posterImgElement.src = content.posterImgUrl;
+        posterImgElement.alt = content.author;
+        posterImgElement.classList.add("poster-image");
+        posterImgDiv.appendChild(posterImgElement);
+
+        // Create a paragraph element for the post title
+        const postTitleElement = document.createElement("p");
+        postTitleElement.classList.add("post-title");
+        postTitleElement.textContent = content.title;
+
+        // Create a paragraph element for the post description
+        const postDescElement = document.createElement("p");
+        postDescElement.classList.add("post-desc");
+        postDescElement.textContent = content.desc;
+
+        // Create a paragraph element for the post author
+        const postAuthorElement = document.createElement("p");
+        postAuthorElement.classList.add("post-author");
+        postAuthorElement.textContent = "Posted by: " + content.author;
+
+        // Create a div for the post actions
+        const postActionsDiv = document.createElement("div");
+        postActionsDiv.classList.add("post-actions");
+
+        // Create the like button
+        const likeButtonDiv = document.createElement("div");
+        likeButtonDiv.classList.add("post-action", "like-button");
+        const likeIcon = document.createElement("img");
+        likeIcon.src = "https://image.flaticon.com/icons/png/128/1077/1077035.png";
+        likeButtonDiv.appendChild(likeIcon);
+        const likeCountSpan = document.createElement("span");
+        likeCountSpan.textContent = content.likeCount + " Likes";
+        likeButtonDiv.appendChild(likeCountSpan);
+
+        // Create the share button
+        const shareButtonDiv = document.createElement("div");
+        shareButtonDiv.classList.add("post-action", "share-button");
+        const shareIcon = document.createElement("img");
+        shareIcon.src = "https://image.flaticon.com/icons/png/128/747/747361.png";
+        shareButtonDiv.appendChild(shareIcon);
+        const shareCountSpan = document.createElement("span");
+        shareCountSpan.textContent = content.shareCount + " Shares";
+        shareButtonDiv.appendChild(shareCountSpan);
+
+        // Create the comment button
+        const commentButtonDiv = document.createElement("div");
+        commentButtonDiv.classList.add("post-action", "comment-button");
+        const commentIcon = document.createElement("img");
+        commentIcon.src = "https://image.flaticon.com/icons/png/128/1380/1380338.png";
+        commentButtonDiv.appendChild(commentIcon);
+        const commentCountSpan = document.createElement("span");
+        commentCountSpan.textContent = content.commentCount + " Comments";
+        commentButtonDiv.appendChild(commentCountSpan);
+
+        // Append the buttons to the post actions div
+        postActionsDiv.appendChild(likeButtonDiv);
+        postActionsDiv.appendChild(shareButtonDiv);
+        postActionsDiv.appendChild(commentButtonDiv);
+
+        // Append the elements to the post content div
+        postContentDiv.appendChild(posterImgDiv);
+        postContentDiv.appendChild(postTitleElement);
+        postContentDiv.appendChild(postDescElement);
+        postContentDiv.appendChild(postAuthorElement);
+        postContentDiv.appendChild(postActionsDiv);
+
+        // Append the image and post content div to the post div
+        postDiv.appendChild(imgElement);
+        postDiv.appendChild(postContentDiv);
+
+        // Append the post div to the dynamicList
+        dynamicList.appendChild(postDiv);
+      });
+    }
+
+    // Call the function to create the list of posts dynamically
+    createPostList();
+  </script>
+</body>
+</html>
+

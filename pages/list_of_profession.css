@@ -1,0 +1,22 @@
+#button-list button {
+  margin-left: 11px;
+  margin-top: 10px;                                                                margin-right: 10px;
+}
+
+#button-list {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+#button-list::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+#button-list::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+#button-list::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
